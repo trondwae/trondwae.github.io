@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tesla-innlogging</title>
+<style>body{font:16px/1.5 -apple-system,sans-serif;max-width:640px;margin:40px auto;padding:0 16px}code{display:block;word-break:break-all;background:#eee;padding:12px;border-radius:8px}</style></head>
+<body><h1>Tesla-innlogging</h1><p id="t">Henter kode …</p><code id="k"></code>
+<script>
+const q=new URLSearchParams(location.search);
+if(q.get("code")){document.getElementById("t").textContent="Kopier hele adressen i adressefeltet (eller koden under) og lim den inn hos Claude:";document.getElementById("k").textContent=q.get("code");}
+else{document.getElementById("t").textContent="Ingen kode i adressen. "+(q.get("error_description")||q.get("error")||"");}
+</script></body></html>
